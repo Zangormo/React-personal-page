@@ -1,0 +1,315 @@
+.page {
+  min-height: 100vh;        
+  display: flex;
+  flex-direction: column; 
+  justify-content: top;
+  align-items: center;   
+  text-align: top;
+  font-family: Arial, sans-serif;
+  position: relative;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.lang-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.lang-btn.active {
+  background: #a855f7;
+  border-color: #a855f7;
+  color: #fff;
+}
+
+.aboutMe {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 35px;
+  max-width: 1200px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 1075px;
+}
+
+.aboutMeText {
+  text-align: left;
+  flex: 1;
+}
+
+.aboutMeTitle {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fff, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutMeParagraph {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ccc;
+  margin: 0;
+}
+
+
+
+.meNshinji {
+  width: 350px;
+  height: 350px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+  display: inline-block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meNshinji:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.instRef {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: right;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.instRef:hover {
+  transform: scale(1.10);
+  filter: drop-shadow(0 0 15px rgba(190, 49, 127, 0.8))
+          drop-shadow(0 0 15px rgba(190, 49, 127, 0.8))
+          drop-shadow(0 0 15px rgba(190, 49, 127, 0.8));
+}
+
+.tgRef {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: right;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.tgRef:hover {
+  transform: scale(1.10);
+  filter: drop-shadow(0 0 15px rgba(30, 168, 202, 0.8))
+          drop-shadow(0 0 15px rgba(30, 168, 202, 0.8))
+          drop-shadow(0 0 15px rgba(30, 168, 202, 0.8));
+}
+
+.linkedinRef {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: right;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.linkedinRef:hover {
+  transform: scale(1.10);
+  filter: drop-shadow(0 0 15px rgba(15, 65, 156, 0.8))
+          drop-shadow(0 0 15px rgba(15, 65, 156, 0.8))
+          drop-shadow(0 0 15px rgba(15, 65, 156, 0.8));
+}
+
+.counterBtn {
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.counterBtn:hover {
+  background: #333;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+              0 0 40px rgba(255, 255, 255, 0.4),
+              0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+
+.footer {
+  padding: 18px 0;
+  color: #777;
+  font-size: 14px;
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex: 1;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .language-selector {
+    top: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+
+  .lang-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .aboutMe {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+    min-width: auto;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .aboutMeTitle {
+    margin-top: 10px;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .aboutMeParagraph {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .meNshinji {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+    display: block;
+  }
+
+  .counterBtn {
+    padding: 10px 24px;
+    font-size: 16px;
+    margin: 20px;
+  }
+
+  .footer {
+    gap: 20px;
+    padding: 15px 0;
+  }
+
+  .instRef,
+  .tgRef,
+  .linkedinRef {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cards-container {
+    gap: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-selector {
+    top: 8px;
+    right: 8px;
+    gap: 5px;
+  }
+
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .aboutMe {
+    margin-top: 45px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .aboutMeTitle {
+    font-size: 24px;
+  }
+
+  .aboutMeParagraph {
+    font-size: 14px;
+  }
+
+  .meNshinji {
+    max-width: 100%;
+  }
+
+  .counterBtn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .instRef,
+  .tgRef,
+  .linkedinRef {
+    width: 45px;
+    height: 45px;
+  }
+}
