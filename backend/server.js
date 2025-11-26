@@ -12,6 +12,7 @@ app.use(express.json());
 
 let cachedToken = null;
 let tokenExpiry = 0;
+let lastPlaybackState = null;
 
 // Function to get a fresh access token using refresh token
 async function getAccessToken() {
@@ -64,6 +65,12 @@ app.get('/api/playback', async (req, res) => {
     });
 
     if (response.status === 204) {
+      if (lastPlaybackState) {
+        return res.json({
+          ...lastPlaybackState,
+          isPlaying: false
+        });
+      }
       return res.json({ playing: false });
     }
 
@@ -74,7 +81,7 @@ app.get('/api/playback', async (req, res) => {
     const data = await response.json();
     
     // Return sanitized data
-    res.json({
+    const playbackData = {
       playing: true,
       songName: data?.item?.name || 'Unknown',
       artistName: data?.item?.artists?.[0]?.name || 'Unknown',
@@ -84,7 +91,10 @@ app.get('/api/playback', async (req, res) => {
       durationMs: data?.item?.duration_ms || 1,
       albumUri: data?.item?.album?.uri || null,
       timestamp: data?.timestamp || Date.now()
-    });
+    };
+
+    lastPlaybackState = playbackData;
+    res.json(playbackData);
 
   } catch (error) {
     console.error('Error fetching playback:', error);
